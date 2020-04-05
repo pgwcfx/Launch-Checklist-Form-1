@@ -25,16 +25,36 @@ form.addEventListener("submit",function(event) {
    let CoPilotNameInput = document.querySelector("input[name=copilotName]");
    let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
    let cargoMassInput = document.querySelector("input[name=cargoMass]");
+   pilotNameInput.innerHTML = "new text";
+   CoPilotNameInput.innerHTML = "new text";
+   fuelLevelInput.innerHTML = "new text";
+   cargoMassInput.innerHTML = "new text";
+   console.log(pilotNameInput.innerHTML.trim());
+   console.log(coPilotNameInput.innerHTML.trim());
+   console.log(fuelLevelInput.innerHTML.trim());
+   console.log(cargoMassInput.innerHTML.trim());
 })
-        if (pilotNameInput.value === "" || CoPilotNameInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
-         alert("All fields are required!");
-         event.preventDefault();
-      }
-      if (typeof pilotNameInput.value !== 'string' || typeof coPilotNameInput.value !== 'string' || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
-         alert("Incorrect data type!");
-         event.preventDefault();
-      }
-      alert("submit clicked");
+let faultyItemsInput = document.querySelector("input[id=faultyItems]");
+let pilotStatusInput = document.querySelector("input[id=pilotStatus]");
+let copilotStatusInput = document.querySelector("input[id=copilotStatus]");
+let fuelStatusInput = document.querySelector("input[id=fuelStatus]");
+let launchStatusInput = document.querySelector("input[id=launchStatus]");
+let cargoStatusInput = document.querySelector("input[id=cargoStatus]");
+console.log(faultyItemsInput.innerHTML.trim());
+console.log(pilotStatusInput.innerHTML.trim());
+console.log(copilotStatusInput.innerHTML.trim());
+console.log(fuelStatusInput.innerHTML.trim());
+console.log(launchStatusInput.innerHTML.trim());
+console.log(cargoStatusInput.innerHTML.trim());
+if (pilotNameInput.value === "" || CoPilotNameInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
+   alert("All fields are required!");
+   event.preventDefault();
+}
+if (typeof pilotNameInput.value !== 'string' || typeof coPilotNameInput.value !== 'string' || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
+   alert("Incorrect data type!");
+    event.preventDefault();
+}
+alert("submit clicked");
 if (fuelLevel.value < 10000) {
    document.getElementById("faultyItems").style.visibility = "visible";
    <div id="launchStatusCheck">
