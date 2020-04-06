@@ -46,15 +46,13 @@ window.addEventListener("load", function() {
       if (fuelLevel.value < 10000) {
          document.getElementById("faultyItems").style.visibility = "visible";
          div.innerHTML = `
-            <h2 style="color: red">id="launchStatus">Shuttle not ready for launch.</h2>
-            <div id="faultyItems">
+            <h2 style="color: red">Shuttle not ready for launch.</h2>
                <ol>
                   <li>pilotStatus: ${pilotName.value} is NOT ready for launch</li>
                   <li>copilotStatus: ${copilotName.value} is NOT ready for launch</li>
                   <li>fuelStatus: There is not enough fuel for the journey.</li>
                   <li>cargoStatus: Cargo mass low enough for launch</li>
                </ol>
-            </div>
          `;
          /*
          <div id="launchStatusCheck">
@@ -72,15 +70,13 @@ window.addEventListener("load", function() {
       } else if (fuelLevel.value > 10000) {
          document.getElementById("faultyItems").style.visibility = "visible";
          div.innerHTML = `
-            <h2 style="color: red">id="launchStatus">Shuttle not ready for launch.</h2>
-            <div id="faultyItems">
+            <h2 style="color: red">Shuttle not ready for launch.</h2>
                <ol>
                   <li>pilotStatus: ${pilotName.value} is NOT ready for launch</li>
                   <li>copilotStatus: ${copilotName.value} is NOT ready for launch</li>
                   <li>fuelStatus: There is not enough fuel for the journey.</li>
                   <li>cargoStatus: There is too much mass for the shuttle to take off.</li>
                </ol>
-            </div>
          `;
          /*
          <div id="launchStatusCheck">
@@ -97,15 +93,13 @@ window.addEventListener("load", function() {
          */
       } else {
          div.innerHTML = `
-            <h2 style="color: green">id="launchStatus">Shuttle is ready for launch.</h2>
-            <div id="faultyItems">
+            <h2 style="color: green">Shuttle is ready for launch.</h2>
                <ol>
                   <li>pilotStatus: ${pilotName.value} is ready for launch</li>
                   <li>copilotStatus: ${copilotName.value} is ready for launch</li>
                   <li>fuelStatus: Fuel level high enough for launch</li>
                   <li>cargoStatus: Cargo mass low enough for launch</li>
                </ol>
-            </div>
          `;
          /*
          <div id="launchStatusCheck">
