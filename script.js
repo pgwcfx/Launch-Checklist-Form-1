@@ -45,6 +45,7 @@ window.addEventListener("load", function() {
       alert("submit clicked");
       if (fuelLevel.value < 10000) {
          document.getElementById("faultyItems").style.visibility = "visible";
+         /*
          <div id="launchStatusCheck">
             <h2 style="color: red">id="launchStatus">Shuttle not ready for launch.</h2>
             <div id="faultyItems">
@@ -56,8 +57,10 @@ window.addEventListener("load", function() {
                </ol>
             </div>
          </div>
+         */
       } else if (fuelLevel.value > 10000) {
          document.getElementById("faultyItems").style.visibility = "visible";
+         /*
          <div id="launchStatusCheck">
             <h2 style="color: red">id="launchStatus">Shuttle not ready for launch.</h2>
             <div id="faultyItems">
@@ -69,7 +72,9 @@ window.addEventListener("load", function() {
                </ol>
             </div>
          </div>
+         */
       } else {
+         /*
          <div id="launchStatusCheck">
             <h2 style="color: green">id="launchStatus">Shuttle is ready for launch.</h2>
             <div  id="faultyItems">
@@ -81,6 +86,7 @@ window.addEventListener("load", function() {
                </ol>
             </div>
          </div>  
+         */
       }
 
    })
