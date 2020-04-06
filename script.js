@@ -48,7 +48,7 @@ window.addEventListener("load", function() {
          div.innerHTML = `
             <h2 style="color: red">Shuttle not ready for launch.</h2>
                <ol>
-                  <liid="pilotStatus">${pilotName.value} is NOT ready for launch</li>
+                  <li id="pilotStatus">${pilotName.value} is NOT ready for launch</li>
                   <li id="copilotStatus">${copilotName.value} is NOT ready for launch</li>
                   <li id="fuelStatus">There is not enough fuel for the journey.</li>
                   <li id="cargoStatus">Cargo mass low enough for launch</li>
