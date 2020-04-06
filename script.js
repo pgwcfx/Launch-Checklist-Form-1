@@ -48,10 +48,10 @@ window.addEventListener("load", function() {
          div.innerHTML = `
             <h2 style="color: red">Shuttle not ready for launch.</h2>
                <ol>
-                  <li id="pilotStatus">${pilotName.value} is NOT ready for launch</li>
-                  <li id="copilotStatus">${copilotName.value} is NOT ready for launch</li>
-                  <li id="fuelStatus">There is not enough fuel for the journey.</li>
-                  <li id="cargoStatus">Cargo mass low enough for launch</li>
+                  <li>${pilotStatus}: ${pilotName.value} is NOT ready for launch</li>
+                  <li>${copilotStatus}: ${copilotName.value} is NOT ready for launch</li>
+                  <li>${fuelStatus}: There is not enough fuel for the journey.</li>
+                  <li>${cargoStatus}: Cargo mass low enough for launch</li>
                </ol>
          `;
          /*
@@ -72,10 +72,10 @@ window.addEventListener("load", function() {
          div.innerHTML = `
             <h2 style="color: red">Shuttle not ready for launch.</h2>
                <ol>
-                  <li id="pilotStatus">${pilotName.value} is NOT ready for launch</li>
-                  <li id="copilotStatus">${copilotName.value} is NOT ready for launch</li>
-                  <li id="fuelStatus">There is not enough fuel for the journey.</li>
-                  <li id="cargoStatus">There is too much mass for the shuttle to take off.</li>
+                  <li>${pilotStatus}: ${pilotName.value} is NOT ready for launch</li>
+                  <li>${copilotStatus}: ${copilotName.value} is NOT ready for launch</li>
+                  <li>${fuelStatus}: There is not enough fuel for the journey.</li>
+                  <li>${cargoStatus}: There is too much mass for the shuttle to take off.</li>
                </ol>
          `;
          /*
@@ -95,10 +95,10 @@ window.addEventListener("load", function() {
          div.innerHTML = `
             <h2 style="color: green">Shuttle is ready for launch.</h2>
                <ol>
-                  <li id="pilotStatus">${pilotName.value} is ready for launch</li>
-                  <li id="copilotStatus">${copilotName.value} is ready for launch</li>
-                  <li id="fuelStatus">Fuel level high enough for launch</li>
-                  <li id="cargoStatus">Cargo mass low enough for launch</li>
+                  <li>${pilotStatus}: ${pilotName.value} is ready for launch</li>
+                  <li>${copilotStatus}: ${copilotName.value} is ready for launch</li>
+                  <li>${fuelStatus}: Fuel level high enough for launch</li>
+                  <li>${cargoStatus}: Cargo mass low enough for launch</li>
                </ol>
          `;
          /*
