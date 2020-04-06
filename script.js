@@ -116,6 +116,6 @@ window.addEventListener("load", function() {
          */
       }
 
-   })
+   });
 
 });
