@@ -4,8 +4,9 @@ window.addEventListener("load", function() {
       response.json().then( function(json) {
          const div = document.getElementById("missionTarget");
 
-         div.innerHTML = `<h2>
-            <ol>Mission Destination</h2>
+         div.innerHTML = `
+         <h2>Mission Destination</h2>
+            <ol>
                <li>Name: ${json.name[4]}</li>
                <li>Diameter: ${json.diameter[4]}</li>
                <li>Star: ${json.star[4]}</li>
