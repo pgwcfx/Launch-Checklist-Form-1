@@ -24,16 +24,6 @@ window.addEventListener("load", function() {
       let CoPilotNameInput = document.querySelector("input[name=copilotName]");
       let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
       let cargoMassInput = document.querySelector("input[name=cargoMass]");
-      pilotNameInput.innerHTML = "new text";
-      CoPilotNameInput.innerHTML = "new text";
-      fuelLevelInput.innerHTML = "new text";
-      cargoMassInput.innerHTML = "new text";
-      let faultyItemsInput = document.querySelector("input[id=faultyItems]");
-      let pilotStatusInput = document.querySelector("input[id=pilotStatus]");
-      let copilotStatusInput = document.querySelector("input[id=copilotStatus]");
-      let fuelStatusInput = document.querySelector("input[id=fuelStatus]");
-      let launchStatusInput = document.querySelector("input[id=launchStatus]");
-      let cargoStatusInput = document.querySelector("input[id=cargoStatus]");
       let fuelUpdate = document.getElementById("fuelStatus");
       let launchUpdate = document.getElementById("launchStatus");
       let faultyItemsUpdate = document.getElementById("faultyItems");
@@ -55,53 +45,14 @@ window.addEventListener("load", function() {
          launchUpdate.style.color = "red";
          launchUpdate.innerHTML = "Shuttle not ready for launch.";
          fuelUpdate.innerHTML = "There is not enough fuel for the journey.";
-         /*
-         <div id="launchStatusCheck">
-            <h2 style="color: red">id="launchStatus">Shuttle not ready for launch.</h2>
-            <div id="faultyItems">
-               <ol>
-                  <li id="pilotStatus">{pilotName.value} is NOT ready for launch</li>
-                  <li id="copilotStatus">{copilotName.value} is NOT ready for launch</li>
-                  <li id="fuelStatus">There is not enough fuel for the journey.</li>
-                  <li id="cargoStatus">Cargo mass low enough for launch</li>
-               </ol>
-            </div>
-         </div>
-         */
       } else if (fuelUpdate.value > 10000) {
          faultyItemsUpdate.style.visibility = "visible";
          launchUpdate.style.color = "red";
          launchUpdate.innerHTML = "Shuttle not ready for launch";
          cargoUpdate.innerHTML = "There is too much mass for the shuttle to take off.";
-         /*
-         <div id="launchStatusCheck">
-            <h2 style="color: red">id="launchStatus">Shuttle not ready for launch.</h2>
-            <div id="faultyItems">
-               <ol>
-                  <li id="pilotStatus">{pilotName.value} is NOT ready for launch.</li>
-                  <li id="copilotStatus">{copilotName.value} is NOT ready for launch.</li>
-                  <li id="fuelStatus">There is not enough fuel for the journey.</li>
-                  <li id="cargoStatus">There is too much mass for the shuttle to take off.</li>
-               </ol>
-            </div>
-         </div>
-         */
       } else if (fuelUpdate.value > 10000 && cargoUpdate.value < 10000) {
          launchUpdate.style.color = "green";
          launchUpdate.innerHTML = "Shuttle is ready for launch.";
-         /*
-         <div id="launchStatusCheck">
-            <h2 style="color: green">id="launchStatus">Shuttle is ready for launch.</h2>
-            <div  id="faultyItems">
-               <ol>
-                  <li id="pilotStatus">{pilotName.value} is ready for launch.</li>
-                  <li id="copilotStatus">{copilotName.value} is ready for launch.</li>
-                  <li id="fuelStatus">Fuel level high enough for launch</li>
-                  <li id="cargoStatus">Cargo mass low enough for launch</li>
-               </ol>
-            </div>
-         </div>  
-         */
       }
 
    });
