@@ -34,6 +34,12 @@ window.addEventListener("load", function() {
       let fuelStatusInput = document.querySelector("input[id=fuelStatus]");
       let launchStatusInput = document.querySelector("input[id=launchStatus]");
       let cargoStatusInput = document.querySelector("input[id=cargoStatus]");
+      let fuelUpdate = document.getElementById("fuelStatus");
+      let launchUpdate = document.getElementById("launchStatus");
+      let faultyItemsUpdate = document.getElementById("faultyItems");
+      let cargoUpdate = document.getElementById("cargoStatus");
+      let pilotUpdate = document.getElementById("pilotStatus");
+      let copilotUpdate = document.getElementById("copilotUpdate");
       if (!isNaN(pilotNameInput.value) || !isNaN(CoPilotNameInput.value) || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
          alert("Incorrect data type!");
       }
@@ -42,13 +48,13 @@ window.addEventListener("load", function() {
          event.preventDefault();
       }
       alert("submit clicked");
-      document.getElementById("pilotStatus").innerHTML = `Pilot ${pilotName.value} is ready for launch.`;
-      document.getElementById("copilotStatus").innerHTML = `Copilot ${copilotName.value} is ready for launch.`;
+      pilotUpdate.innerHTML = `Pilot ${pilotName.value} is ready for launch.`;
+      copilotUpdate.innerHTML = `Copilot ${copilotName.value} is ready for launch.`;
       if (fuelLevel.value < 10000) {
-         document.getElementById("faultyItems").style.visibility = "visible";
-         document.getElementById("launchStatus").style.color = "red";
-         document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch.";
-         document.getElementById("fuelStatus").innerHTML = "There is not enough fuel for the journey.";
+         faultyItemsUpdate.style.visibility = "visible";
+         launchUpdate.style.color = "red";
+         launchUpdate.innerHTML = "Shuttle not ready for launch.";
+         fuelUpdate.innerHTML = "There is not enough fuel for the journey.";
          /*
          <div id="launchStatusCheck">
             <h2 style="color: red">id="launchStatus">Shuttle not ready for launch.</h2>
@@ -63,10 +69,10 @@ window.addEventListener("load", function() {
          </div>
          */
       } else if (fuelLevel.value > 10000) {
-         document.getElementById("faultyItems").style.visibility = "visible";
-         document.getElementById("launchStatus").style.color = "red";
-         document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch";
-         document.getElementById("cargoStatus").innerHTML = "There is too much mass for the shuttle to take off.";
+         faultyItemsUpdate.style.visibility = "visible";
+         launchUpdate.style.color = "red";
+         launchUpdate.innerHTML = "Shuttle not ready for launch";
+         cargoUpdate.innerHTML = "There is too much mass for the shuttle to take off.";
          /*
          <div id="launchStatusCheck">
             <h2 style="color: red">id="launchStatus">Shuttle not ready for launch.</h2>
@@ -81,8 +87,8 @@ window.addEventListener("load", function() {
          </div>
          */
       } else if (fuelLevelInput.value > 10000 && cargoMassInput.value < 10000) {
-         document.getElementById("launchStatus").style.color = "green";
-         document.getElementById("launchStatus").innerHTML = "Shuttle is ready for launch.";
+         launchUpdate.style.color = "green";
+         launchUpdate.innerHTML = "Shuttle is ready for launch.";
          /*
          <div id="launchStatusCheck">
             <h2 style="color: green">id="launchStatus">Shuttle is ready for launch.</h2>
