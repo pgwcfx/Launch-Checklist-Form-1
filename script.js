@@ -36,24 +36,21 @@ window.addEventListener("load", function() {
       let fuelStatusInput = document.querySelector("input[id=fuelStatus]");
       let launchStatusInput = document.querySelector("input[id=launchStatus]");
       let cargoStatusInput = document.querySelector("input[id=cargoStatus]");
-      if (pilotNameInput.value === "" || CoPilotNameInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
-         alert("All fields are required!");
+      if (!isNaN(pilotNameInput.value) || !isNaN(CoPilotNameInput.value) || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
+         alert("Incorrect data type!");
          event.preventDefault();
       }
-      if (typeof pilotNameInput.value !== 'string' || typeof coPilotNameInput.value !== 'string' || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
-         alert("Incorrect data type!");
+      if (pilotNameInput.value === "" || coPilotNameInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
+         alert("All fields are required!");
       }
       alert("submit clicked");
-      document.getElementById("pilotStatus").innerHTML = `Pilot ${pilotNameInput.value} is ready for launch.`;
-      document.getElementById("copilotStatus").innerHTML = `Pilot ${CoPilotNameInput.value} is ready for launch.`;
+      document.getElementById("pilotStatus").innerHTML = `Pilot ${pilotName.value} is ready for launch.`;
+      document.getElementById("copilotStatus").innerHTML = `Copilot ${copilotName.value} is ready for launch.`;
       if (fuelLevel.value < 10000) {
          document.getElementById("faultyItems").style.visibility = "visible";
          document.getElementById("launchStatus").style.color = "red";
          document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch.";
-         document.getElementById("pilotStatus").innerHTML = `Pilot ${pilotNameInput.value} is NOT ready for launch.`;
-         document.getElementById("copilotStatus").innerHTML = `Copilot ${CoPilotNameInput.value} is NOT ready for launch.`;
          document.getElementById("fuelStatus").innerHTML = "There is not enough fuel for the journey.";
-         document.getElementById("cargoStatus").innerHTML = "Cargo mass low enough for launch.";
          /*
          <div id="launchStatusCheck">
             <h2 style="color: red">id="launchStatus">Shuttle not ready for launch.</h2>
@@ -71,9 +68,6 @@ window.addEventListener("load", function() {
          document.getElementById("faultyItems").style.visibility = "visible";
          document.getElementById("launchStatus").style.color = "red";
          document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch";
-         document.getElementById("pilotStatus").innerHTML = `Pilot ${pilotName.value} is NOT ready for launch.`;
-         document.getElementById("copilotStatus").innerHTML = `Copilot ${copilotName.value} is NOT ready for launch.`;
-         document.getElementById("fuelStatus").innerHTML = "There is not enough fuel for the journey.";
          document.getElementById("cargoStatus").innerHTML = "There is too much mass for the shuttle to take off.";
          /*
          <div id="launchStatusCheck">
@@ -88,13 +82,9 @@ window.addEventListener("load", function() {
             </div>
          </div>
          */
-      } else {
+      } else if (fuelLevelInput.value > 10000 && cargoMassInput.value < 10000) {
          document.getElementById("launchStatus").style.color = "green";
          document.getElementById("launchStatus").innerHTML = "Shuttle is ready for launch.";
-         document.getElementById("pilotStatus").innerHTML = `Pilot ${pilotName.value} is ready for launch.`;
-         document.getElementById("copilotStatus").innerHTML = `Copilot ${copilotName.value} is ready for launch.`;
-         document.getElementById("fuelStatus").innerHTML = "Fuel level high enough for launch.";
-         document.getElementById("cargoStatus").innerHTML = "Cargo mass low enough for launch.";
          /*
          <div id="launchStatusCheck">
             <h2 style="color: green">id="launchStatus">Shuttle is ready for launch.</h2>
