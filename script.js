@@ -37,7 +37,6 @@ window.addEventListener("load", function() {
       if (!isNaN(pilotNameInput.value) || !isNaN(CoPilotNameInput.value) || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
          alert("Incorrect data type!");
       }
-      alert("submit clicked");
       pilotUpdate.innerHTML = `Pilot ${pilotName.value} is ready for launch.`;
       copilotUpdate.innerHTML = `Copilot ${copilotName.value} is ready for launch.`;
       if (fuelUpdate.value < 10000) {
