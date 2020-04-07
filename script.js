@@ -40,12 +40,12 @@ window.addEventListener("load", function() {
       let cargoUpdate = document.getElementById("cargoStatus");
       let pilotUpdate = document.getElementById("pilotStatus");
       let copilotUpdate = document.getElementById("copilotUpdate");
-      if (!isNaN(pilotNameInput.value) || !isNaN(CoPilotNameInput.value) || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
-         alert("Incorrect data type!");
-      }
       if (pilotNameInput.value === "" || coPilotNameInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
          alert("All fields are required!");
          event.preventDefault();
+      }
+      if (!isNaN(pilotNameInput.value) || !isNaN(CoPilotNameInput.value) || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
+         alert("Incorrect data type!");
       }
       alert("submit clicked");
       pilotUpdate.innerHTML = `Pilot ${pilotName.value} is ready for launch.`;
