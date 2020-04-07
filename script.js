@@ -20,8 +20,6 @@ window.addEventListener("load", function() {
    });
    let form = document.querySelector("form");
    form.addEventListener("submit",function(event) {
-      event.preventDefault();
-
       let pilotNameInput = document.querySelector("input[name=pilotName]");
       let CoPilotNameInput = document.querySelector("input[name=copilotName]");
       let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
@@ -38,10 +36,10 @@ window.addEventListener("load", function() {
       let cargoStatusInput = document.querySelector("input[id=cargoStatus]");
       if (!isNaN(pilotNameInput.value) || !isNaN(CoPilotNameInput.value) || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
          alert("Incorrect data type!");
-         event.preventDefault();
       }
       if (pilotNameInput.value === "" || coPilotNameInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
          alert("All fields are required!");
+         event.preventDefault();
       }
       alert("submit clicked");
       document.getElementById("pilotStatus").innerHTML = `Pilot ${pilotName.value} is ready for launch.`;
