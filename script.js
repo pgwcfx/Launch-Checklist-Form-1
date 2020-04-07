@@ -21,7 +21,7 @@ window.addEventListener("load", function() {
    let form = document.querySelector("form");
    form.addEventListener("submit",function(event) {
       let pilotNameInput = document.querySelector("input[name=pilotName]");
-      let CoPilotNameInput = document.querySelector("input[name=copilotName]");
+      let CopilotNameInput = document.querySelector("input[name=copilotName]");
       let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
       let cargoMassInput = document.querySelector("input[name=cargoMass]");
       let fuelUpdate = document.getElementById("fuelStatus");
@@ -37,8 +37,8 @@ window.addEventListener("load", function() {
       if (!isNaN(pilotNameInput.value) || !isNaN(CoPilotNameInput.value) || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
          alert("Incorrect data type!");
       }
-      pilotUpdate.innerHTML = `Pilot ${pilotName.value} is ready for launch.`;
-      copilotUpdate.innerHTML = `Copilot ${copilotName.value} is ready for launch.`;
+      pilotUpdate.innerHTML = `Pilot ${pilotNameInput} is ready for launch.`;
+      copilotUpdate.innerHTML = `Copilot ${copilotNameInput} is ready for launch.`;
       if (fuelUpdate.value < 10000) {
          faultyItemsUpdate.style.visibility = "visible";
          launchUpdate.style.color = "red";
