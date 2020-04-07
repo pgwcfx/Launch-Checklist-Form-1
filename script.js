@@ -50,7 +50,7 @@ window.addEventListener("load", function() {
       alert("submit clicked");
       pilotUpdate.innerHTML = `Pilot ${pilotName.value} is ready for launch.`;
       copilotUpdate.innerHTML = `Copilot ${copilotName.value} is ready for launch.`;
-      if (fuelLevel.value < 10000) {
+      if (fuelUpdate.value < 10000) {
          faultyItemsUpdate.style.visibility = "visible";
          launchUpdate.style.color = "red";
          launchUpdate.innerHTML = "Shuttle not ready for launch.";
@@ -68,7 +68,7 @@ window.addEventListener("load", function() {
             </div>
          </div>
          */
-      } else if (fuelLevel.value > 10000) {
+      } else if (fuelUpdate.value > 10000) {
          faultyItemsUpdate.style.visibility = "visible";
          launchUpdate.style.color = "red";
          launchUpdate.innerHTML = "Shuttle not ready for launch";
@@ -86,7 +86,7 @@ window.addEventListener("load", function() {
             </div>
          </div>
          */
-      } else if (fuelLevelInput.value > 10000 && cargoMassInput.value < 10000) {
+      } else if (fuelUpdate.value > 10000 && cargoUpdate.value < 10000) {
          launchUpdate.style.color = "green";
          launchUpdate.innerHTML = "Shuttle is ready for launch.";
          /*
