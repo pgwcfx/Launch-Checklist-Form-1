@@ -39,7 +39,7 @@ window.addEventListener("load", function() {
       let faultyItemsUpdate = document.getElementById("faultyItems");
       let cargoUpdate = document.getElementById("cargoStatus");
       let pilotUpdate = document.getElementById("pilotStatus");
-      let copilotUpdate = document.getElementById("copilotUpdate");
+      let copilotUpdate = document.getElementById("copilotStatus");
       if (pilotNameInput.value === "" || coPilotNameInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
          alert("All fields are required!");
          event.preventDefault();
