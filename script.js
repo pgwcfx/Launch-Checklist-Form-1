@@ -37,7 +37,8 @@ window.addEventListener("load", function() {
       if (!isNaN(pilotNameInput.value) || !isNaN(copilotNameInput.value) || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
          alert("Incorrect data type!");
       }
-      pilotUpdate.innerHTML = `Pilot ${pilotNameInput.value} is ready for launch.`;
+      faultyItemsUpdate.style.visibility = "visible";
+    /*  pilotUpdate.innerHTML = `Pilot ${pilotNameInput.value} is ready for launch.`;
       copilotUpdate.innerHTML = `Copilot ${copilotNameInput.value} is ready for launch.`;
       if (fuelUpdate.value < 10000) {
          faultyItemsUpdate.style.visibility = "visible";
@@ -52,7 +53,7 @@ window.addEventListener("load", function() {
       } else if (fuelUpdate.value > 10000 && cargoUpdate.value < 10000) {
          launchUpdate.style.color = "green";
          launchUpdate.innerHTML = "Shuttle is ready for launch.";
-      }
+      }*/
 
    });
 
