@@ -44,7 +44,7 @@ window.addEventListener("load", function() {
          launchUpdate.style.color = "red";
          launchUpdate.innerHTML = "Shuttle not ready for launch.";
          fuelUpdate.innerHTML = "There is not enough fuel for the journey.";
-      } else if (fuelUpdate.value > 10000) {
+      } else if (cargoUpdate.value > 10000) {
          faultyItemsUpdate.style.visibility = "visible";
          launchUpdate.style.color = "red";
          launchUpdate.innerHTML = "Shuttle not ready for launch";
