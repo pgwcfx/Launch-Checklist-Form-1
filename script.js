@@ -3,18 +3,26 @@ window.addEventListener("load", function() {
    fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
       response.json().then( function(json) {
          const div = document.getElementById("missionTarget");
+         
+         function randomSelection(arr){
+            let i = Math.floor(Math.random()*arr.length);
+            return arr[i];
+         }
 
-         div.innerHTML = `
-         <h2>Mission Destination</h2>
-            <ol>
-               <li>Name: ${json[4].name}</li>
-               <li>Diameter: ${json[4].diameter}</li>
-               <li>Star: ${json[4].star}</li>
-               <li>Distance from Earth: ${json[4].distance}</li>
-               <li>Number of Moons: ${json[4].moons}</li>
-            </ol>
-            <img src="${json[4].image}">
-         `;
+         for (i=0; i < json.length; i++){
+            div.innerHTML = `
+            <h2>Mission Destination</h2>
+               <ol>
+                  <li>Name: ${json[i].name}</li>
+                  <li>Diameter: ${json[i].diameter}</li>
+                  <li>Star: ${json[i].star}</li>
+                  <li>Distance from Earth: ${json[i].distance}</li>
+                  <li>Number of Moons: ${json[i].moons}</li>
+               </ol>
+               <img src="${json[i].image}">
+            `;
+            console.log(randomSelection(div.innerHTML));
+         }
          
       });
    });
@@ -32,43 +40,36 @@ window.addEventListener("load", function() {
       let faultyItemsUpdate = document.getElementById("faultyItems");
       if (pilotNameInput.value === "" || copilotNameInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
          alert("All fields are required!");
+         faultyItemsUpdate.style.visibility = "hidden";
          event.preventDefault();
       } else if (!isNaN(pilotNameInput.value) || !isNaN(copilotNameInput.value) || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
          alert("Incorrect data type!");
+         faultyItemsUpdate.style.visibility = "hidden";
          event.preventDefault();
       } else {
          faultyItemsUpdate.style.visibility = "visible";
+         pilotUpdate.innerHTML = `Pilot ${pilotNameInput.value} is ready for launch`;
+         copilotUpdate.innerHTML = `Co-pilot ${copilotNameInput.value} is ready for launch`;
+         fuelUpdate.innerHTML = "Fuel level high enough for launch";
+         cargoUpdate.innerHTML = "Cargo mass low enough for launch";
          if (fuelLevelInput.value < 10000) {
             launchUpdate.style.color = "red";
             launchUpdate.innerHTML = "Shuttle not ready for launch.";
             fuelUpdate.innerHTML = "There is not enough fuel for the journey.";
+            event.preventDefault();
          } 
          if (cargoMassInput.value > 10000) {
             launchUpdate.style.color = "red";
             launchUpdate.innerHTML = "Shuttle not ready for launch";
             cargoUpdate.innerHTML = "There is too much mass for the shuttle to take off.";
+            event.preventDefault();
          } 
-         if (fuelUpdate.value > 10000 && cargoUpdate.value < 10000) {
+         if (fuelLevelInput.value >= 10000 && cargoMassInput.value <= 10000) {
             launchUpdate.style.color = "green";
             launchUpdate.innerHTML = "Shuttle is ready for launch.";
+            event.preventDefault();
          }
       }
-    /*  pilotUpdate.innerHTML = `Pilot ${pilotNameInput.value} is ready for launch.`;
-      copilotUpdate.innerHTML = `Copilot ${copilotNameInput.value} is ready for launch.`;
-      if (fuelUpdate.value < 10000) {
-         faultyItemsUpdate.style.visibility = "visible";
-         launchUpdate.style.color = "red";
-         launchUpdate.innerHTML = "Shuttle not ready for launch.";
-         fuelUpdate.innerHTML = "There is not enough fuel for the journey.";
-      } else if (cargoUpdate.value > 10000) {
-         faultyItemsUpdate.style.visibility = "visible";
-         launchUpdate.style.color = "red";
-         launchUpdate.innerHTML = "Shuttle not ready for launch";
-         cargoUpdate.innerHTML = "There is too much mass for the shuttle to take off.";
-      } else if (fuelUpdate.value > 10000 && cargoUpdate.value < 10000) {
-         launchUpdate.style.color = "green";
-         launchUpdate.innerHTML = "Shuttle is ready for launch.";
-      }*/
 
    });
 
