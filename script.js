@@ -21,7 +21,7 @@ window.addEventListener("load", function() {
    let form = document.querySelector("form");
    form.addEventListener("submit",function(event) {
       let pilotNameInput = document.querySelector("input[name=pilotName]");
-      let CopilotNameInput = document.querySelector("input[name=copilotName]");
+      let copilotNameInput = document.querySelector("input[name=copilotName]");
       let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
       let cargoMassInput = document.querySelector("input[name=cargoMass]");
       let fuelUpdate = document.getElementById("fuelStatus");
@@ -30,11 +30,11 @@ window.addEventListener("load", function() {
       let cargoUpdate = document.getElementById("cargoStatus");
       let pilotUpdate = document.getElementById("pilotStatus");
       let copilotUpdate = document.getElementById("copilotStatus");
-      if (pilotNameInput.value === "" || coPilotNameInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
+      if (pilotNameInput.value === "" || copilotNameInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
          alert("All fields are required!");
          event.preventDefault();
       }
-      if (!isNaN(pilotNameInput.value) || !isNaN(CoPilotNameInput.value) || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
+      if (!isNaN(pilotNameInput.value) || !isNaN(copilotNameInput.value) || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
          alert("Incorrect data type!");
       }
       pilotUpdate.innerHTML = `Pilot ${pilotNameInput.value} is ready for launch.`;
