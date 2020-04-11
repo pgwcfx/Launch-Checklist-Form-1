@@ -3,13 +3,8 @@ window.addEventListener("load", function() {
    fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
       response.json().then( function(json) {
          const div = document.getElementById("missionTarget");
-         
-         function randomSelection(arr){
-            let i = Math.floor(Math.random()*arr.length);
-            return arr[i];
-         }
 
-         for (i=0; i < json.length; i++){
+         let i = Math.floor(Math.random()*json.length);
             div.innerHTML = `
             <h2>Mission Destination</h2>
                <ol>
@@ -21,9 +16,6 @@ window.addEventListener("load", function() {
                </ol>
                <img src="${json[i].image}">
             `;
-            console.log(randomSelection(div.innerHTML));
-         }
-         
       });
    });
    let form = document.querySelector("form");
